@@ -129,11 +129,14 @@ class PlutoGridCellGestureEvent extends PlutoGridEvent {
   }
 
   void _selectMode(PlutoGridStateManager stateManager) {
-    if (stateManager.isCurrentCell(cell)) {
-      stateManager.handleOnSelected();
-    } else {
-      stateManager.setCurrentCell(cell, rowIdx);
-    }
+    stateManager.setCurrentCell(cell, rowIdx);
+    stateManager.handleOnSelected();
+
+    // if (stateManager.isCurrentCell(cell)) {
+    //   stateManager.handleOnSelected();
+    // } else {
+    //   stateManager.setCurrentCell(cell, rowIdx);
+    // }
   }
 
   void _setCurrentCell(

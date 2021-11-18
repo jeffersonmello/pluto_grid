@@ -184,6 +184,10 @@ class _DevelopmentScreenState extends State<DevelopmentScreen> {
         child: PlutoGrid(
           columns: columns,
           rows: rows,
+          mode: PlutoGridMode.select,
+          onSelected: (PlutoGridOnSelectedEvent event) {
+            print(event);
+          },
           onChanged: (PlutoGridOnChangedEvent event) {
             print(event);
           },
